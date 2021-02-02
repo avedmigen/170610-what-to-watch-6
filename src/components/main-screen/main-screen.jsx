@@ -2,9 +2,7 @@ import React from "react";
 import SmallMovieCard from "../small-movie-card/small-movie-card";
 import PropTypes from "prop-types";
 
-const MainScreen = (props) => {
-
-  const {promo, movies} = props;
+const MainScreen = ({promo, movies}) => {
 
   return (
     <>
