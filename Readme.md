@@ -1,7 +1,7 @@
 # Личный проект «Что посмотреть» [![Build status][travis-image]][travis-url]
 
 * Студент: [Дмитрий Аверин](https://up.htmlacademy.ru/react/6/user/170610).
-* Наставник: `Неизвестно`.
+* Наставник: [Светлана Блинова](https://htmlacademy.ru/profile/id1432187).
 
 ---
 
