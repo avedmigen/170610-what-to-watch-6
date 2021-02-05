@@ -1,6 +1,8 @@
 import React from "react";
-import SmallMovieCard from "../small-movie-card/small-movie-card";
 import PropTypes from "prop-types";
+
+import SmallMovieCard from "../small-movie-card/small-movie-card";
+import {movieShape} from "../../types";
 
 const MainScreen = ({promo, movies}) => {
 
@@ -126,14 +128,8 @@ const MainScreen = ({promo, movies}) => {
 };
 
 MainScreen.propTypes = {
-  promo: PropTypes.shape({
-    name: PropTypes.string.isRequired,
-    genre: PropTypes.string.isRequired,
-    released: PropTypes.number.isRequired,
-    posterImage: PropTypes.string.isRequired,
-    backgroundImage: PropTypes.string.isRequired,
-  }),
-  movies: PropTypes.array,
+  promo: movieShape,
+  movies: PropTypes.arrayOf(movieShape)
 };
 
 export default MainScreen;

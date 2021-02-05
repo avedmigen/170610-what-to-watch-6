@@ -1,9 +1,10 @@
 import React from "react";
 import ReactDOM from "react-dom";
+
 import App from "./components/app/app";
 
 const promo = {
-  id: 21,
+  id: 99999,
   name: `The Grand Budapest Hotel`,
   genre: `Comedy`,
   released: 2014,
@@ -15,102 +16,182 @@ const movies = [
   {
     id: 1,
     name: `Fantastic Beasts: The Crimes of Grindelwald`,
-    previewImage: `img/fantastic-beasts-the-crimes-of-grindelwald.jpg`
+    previewImage: `img/fantastic-beasts-the-crimes-of-grindelwald.jpg`,
+    genre: `Lorem`,
+    released: 2021,
+    posterImage: `img/lorem.jpg`,
+    backgroundImage: `img/lorem.jpg`,
   },
   {
     id: 2,
     name: `Bohemian Rhapsody`,
-    previewImage: `img/bohemian-rhapsody.jpg`
+    previewImage: `img/bohemian-rhapsody.jpg`,
+    genre: `Lorem`,
+    released: 2021,
+    posterImage: `img/lorem.jpg`,
+    backgroundImage: `img/lorem.jpg`,
   },
   {
     id: 3,
     name: `Macbeth`,
-    previewImage: `img/macbeth.jpg`
+    previewImage: `img/macbeth.jpg`,
+    genre: `Lorem`,
+    released: 2021,
+    posterImage: `img/lorem.jpg`,
+    backgroundImage: `img/lorem.jpg`,
   },
   {
     id: 4,
     name: `Aviator`,
-    previewImage: `img/aviator.jpg`
+    previewImage: `img/aviator.jpg`,
+    genre: `Lorem`,
+    released: 2021,
+    posterImage: `img/lorem.jpg`,
+    backgroundImage: `img/lorem.jpg`,
   },
   {
     id: 5,
     name: `We need to talk about Kevin`,
-    previewImage: `img/we-need-to-talk-about-kevin.jpg`
+    previewImage: `img/we-need-to-talk-about-kevin.jpg`,
+    genre: `Lorem`,
+    released: 2021,
+    posterImage: `img/lorem.jpg`,
+    backgroundImage: `img/lorem.jpg`,
   },
   {
     id: 6,
     name: `What We Do in the Shadows`,
-    previewImage: `img/what-we-do-in-the-shadows.jpg`
+    previewImage: `img/what-we-do-in-the-shadows.jpg`,
+    genre: `Lorem`,
+    released: 2021,
+    posterImage: `img/lorem.jpg`,
+    backgroundImage: `img/lorem.jpg`,
   },
   {
     id: 7,
     name: `Revenant`,
-    previewImage: `img/revenant.jpg`
+    previewImage: `img/revenant.jpg`,
+    genre: `Lorem`,
+    released: 2021,
+    posterImage: `img/lorem.jpg`,
+    backgroundImage: `img/lorem.jpg`,
   },
   {
     id: 8,
     name: `Johnny English`,
-    previewImage: `img/johnny-english.jpg`
+    previewImage: `img/johnny-english.jpg`,
+    genre: `Lorem`,
+    released: 2021,
+    posterImage: `img/lorem.jpg`,
+    backgroundImage: `img/lorem.jpg`,
   },
   {
     id: 9,
     name: `Shutter Island`,
-    previewImage: `img/shutter-island.jpg`
+    previewImage: `img/shutter-island.jpg`,
+    genre: `Lorem`,
+    released: 2021,
+    posterImage: `img/lorem.jpg`,
+    backgroundImage: `img/lorem.jpg`,
   },
   {
     id: 10,
     name: `Pulp Fiction`,
-    previewImage: `img/pulp-fiction.jpg`
+    previewImage: `img/pulp-fiction.jpg`,
+    genre: `Lorem`,
+    released: 2021,
+    posterImage: `img/lorem.jpg`,
+    backgroundImage: `img/lorem.jpg`,
   },
   {
     id: 11,
     name: `No Country for Old Men`,
-    previewImage: `img/no-country-for-old-men.jpg`
+    previewImage: `img/no-country-for-old-men.jpg`,
+    genre: `Lorem`,
+    released: 2021,
+    posterImage: `img/lorem.jpg`,
+    backgroundImage: `img/lorem.jpg`,
   },
   {
     id: 12,
     name: `Snatch`,
-    previewImage: `img/snatch.jpg`
+    previewImage: `img/snatch.jpg`,
+    genre: `Lorem`,
+    released: 2021,
+    posterImage: `img/lorem.jpg`,
+    backgroundImage: `img/lorem.jpg`,
   },
   {
     id: 13,
     name: `Moonrise Kingdom`,
-    previewImage: `img/moonrise-kingdom.jpg`
+    previewImage: `img/moonrise-kingdom.jpg`,
+    genre: `Lorem`,
+    released: 2021,
+    posterImage: `img/lorem.jpg`,
+    backgroundImage: `img/lorem.jpg`,
   },
   {
     id: 14,
     name: `Seven Years in Tibet`,
-    previewImage: `img/seven-years-in-tibet.jpg`
+    previewImage: `img/seven-years-in-tibet.jpg`,
+    genre: `Lorem`,
+    released: 2021,
+    posterImage: `img/lorem.jpg`,
+    backgroundImage: `img/lorem.jpg`,
   },
   {
     id: 15,
     name: `Midnight Special`,
-    previewImage: `img/midnight-special.jpg`
+    previewImage: `img/midnight-special.jpg`,
+    genre: `Lorem`,
+    released: 2021,
+    posterImage: `img/lorem.jpg`,
+    backgroundImage: `img/lorem.jpg`,
   },
   {
     id: 16,
     name: `War of the Worlds`,
-    previewImage: `img/war-of-the-worlds.jpg`
+    previewImage: `img/war-of-the-worlds.jpg`,
+    genre: `Lorem`,
+    released: 2021,
+    posterImage: `img/lorem.jpg`,
+    backgroundImage: `img/lorem.jpg`,
   },
   {
     id: 17,
     name: `Dardjeeling Limited`,
-    previewImage: `img/dardjeeling-limited.jpg`
+    previewImage: `img/dardjeeling-limited.jpg`,
+    genre: `Lorem`,
+    released: 2021,
+    posterImage: `img/lorem.jpg`,
+    backgroundImage: `img/lorem.jpg`,
   },
   {
     id: 18,
     name: `Orlando`,
-    previewImage: `img/orlando.jpg`
+    previewImage: `img/orlando.jpg`,
+    genre: `Lorem`,
+    released: 2021,
+    posterImage: `img/lorem.jpg`,
+    backgroundImage: `img/lorem.jpg`,
   },
   {
     id: 19,
     name: `Mindhunter`,
-    previewImage: `img/mindhunter.jpg`
+    previewImage: `img/mindhunter.jpg`,
+    genre: `Lorem`,
+    released: 2021,
+    posterImage: `img/lorem.jpg`,
+    backgroundImage: `img/lorem.jpg`,
   },
   {
     id: 20,
     name: `Midnight Special`,
-    previewImage: `img/midnight-special.jpg`
+    previewImage: `img/midnight-special.jpg`,
+    genre: `Lorem`,
+    released: 2021,
+    posterImage: `img/lorem.jpg`,
+    backgroundImage: `img/lorem.jpg`,
   },
 ];
 

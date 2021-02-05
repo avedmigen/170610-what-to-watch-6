@@ -1,5 +1,6 @@
 import React from "react";
-import PropTypes from "prop-types";
+
+import {movieShape} from "../../types";
 
 const SmallMovieCard = ({movie}) => {
   const {name, previewImage} = movie;
@@ -18,7 +19,7 @@ const SmallMovieCard = ({movie}) => {
 };
 
 SmallMovieCard.propTypes = {
-  movie: PropTypes.object,
+  movie: movieShape,
 };
 
 export default SmallMovieCard;
