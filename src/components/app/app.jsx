@@ -27,7 +27,9 @@ const App = ({promo, movies}) => (
         <MyListScreen />
       </Route>
       <Route exact path="/films/:id">
-        <MoviePageScreen />
+        <MoviePageScreen
+          movies = {movies}
+        />
       </Route>
       <Route exact path="/films/:id/review">
         <AddReviewScreen />

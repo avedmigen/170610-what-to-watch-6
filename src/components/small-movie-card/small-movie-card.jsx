@@ -1,9 +1,10 @@
 import React from "react";
 
 import {movieShape} from "../../types";
+import {Link} from "react-router-dom";
 
 const SmallMovieCard = ({movie}) => {
-  const {name, previewImage} = movie;
+  const {id, name, previewImage} = movie;
 
   return (
     <article className="small-movie-card catalog__movies-card">
@@ -12,7 +13,7 @@ const SmallMovieCard = ({movie}) => {
           alt={name} width="280" height="175"/>
       </div>
       <h3 className="small-movie-card__title">
-        <a className="small-movie-card__link" href="movie-page.html">{name}</a>
+        <Link className="small-movie-card__link" to={`/films/${id}`}>{name}</Link>
       </h3>
     </article>
   );
