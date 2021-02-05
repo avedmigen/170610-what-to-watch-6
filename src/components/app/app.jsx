@@ -1,6 +1,6 @@
 import React from "react";
 import PropTypes from "prop-types";
-import {Switch, Route, BrowserRouter} from 'react-router-dom';
+import {BrowserRouter, Route, Switch} from 'react-router-dom';
 
 import MainScreen from "../main-screen/main-screen";
 import SignInScreen from "../sign-in-screen/sign-in-screen";
@@ -24,12 +24,18 @@ const App = ({promo, movies}) => (
         <SignInScreen />
       </Route>
       <Route exact path="/mylist">
-        <MyListScreen />
-      </Route>
-      <Route exact path="/films/:id">
-        <MoviePageScreen
+        <MyListScreen
           movies = {movies}
         />
+      </Route>
+      <Route exact
+        path="/films/:id"
+        render = {(props) => (
+          <MoviePageScreen
+            props = {props}
+            movies = {movies}
+          />
+        )} >
       </Route>
       <Route exact path="/films/:id/review">
         <AddReviewScreen />

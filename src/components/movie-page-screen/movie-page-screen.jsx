@@ -1,10 +1,20 @@
 import React from "react";
 import PropTypes from "prop-types";
+import {Link} from 'react-router-dom';
+
 import {movieShape} from "../../types";
 
 import SmallMovieCard from "../small-movie-card/small-movie-card";
+import LogoHeader from "../logo-header/logo-header";
+import LogoFooter from "../logo-footer/logo-footer";
+import PlayButton from "../play-button/play-button";
 
-const MoviePageScreen = ({movies}) => {
+const MoviePageScreen = (props) => {
+
+  const films = props.movies;
+
+  const id = 12;
+
   return (
     <>
       <section className="movie-card movie-card--full">
@@ -16,13 +26,7 @@ const MoviePageScreen = ({movies}) => {
           <h1 className="visually-hidden">WTW</h1>
 
           <header className="page-header movie-card__head">
-            <div className="logo">
-              <a href="main.html" className="logo__link">
-                <span className="logo__letter logo__letter--1">W</span>
-                <span className="logo__letter logo__letter--2">T</span>
-                <span className="logo__letter logo__letter--3">W</span>
-              </a>
-            </div>
+            <LogoHeader />
 
             <div className="user-block">
               <div className="user-block__avatar">
@@ -40,19 +44,14 @@ const MoviePageScreen = ({movies}) => {
               </p>
 
               <div className="movie-card__buttons">
-                <button className="btn btn--play movie-card__button" type="button">
-                  <svg viewBox="0 0 19 19" width="19" height="19">
-                    <use xlinkHref="#play-s"></use>
-                  </svg>
-                  <span>Play</span>
-                </button>
-                <button className="btn btn--list movie-card__button" type="button">
+                <PlayButton />
+                <Link to="/mylist" className="btn btn--list movie-card__button" type="button">
                   <svg viewBox="0 0 19 20" width="19" height="20">
                     <use xlinkHref="#add"></use>
                   </svg>
                   <span>My list</span>
-                </button>
-                <a href="add-review.html" className="btn movie-card__button">Add review</a>
+                </Link>
+                <Link to={`/films/${id}/review`} className="btn movie-card__button">Add review</Link>
               </div>
             </div>
           </div>
@@ -112,19 +111,13 @@ const MoviePageScreen = ({movies}) => {
           <h2 className="catalog__title">More like this</h2>
 
           <div className="catalog__movies-list">
-            {movies.map((movie, i) => <SmallMovieCard key={movie + i} movie={movie} />)}
+            {films.map((movie, i) => <SmallMovieCard key={movie + i} movie={movie} />)}
           </div>
 
         </section>
 
         <footer className="page-footer">
-          <div className="logo">
-            <a href="main.html" className="logo__link logo__link--light">
-              <span className="logo__letter logo__letter--1">W</span>
-              <span className="logo__letter logo__letter--2">T</span>
-              <span className="logo__letter logo__letter--3">W</span>
-            </a>
-          </div>
+          <LogoFooter />
 
           <div className="copyright">
             <p>© 2019 What to watch Ltd.</p>
