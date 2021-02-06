@@ -1,12 +1,24 @@
 import React from "react";
 import LogoHeader from "../logo-header/logo-header";
+import {findObjInArrayById} from "../../utils";
+import PropTypes from "prop-types";
+import {movieShape, objectPropType} from "../../types";
+import MoviePageScreen from "../movie-page-screen/movie-page-screen";
+import {Link} from "react-router-dom";
 
-const AddReviewScreen = () => {
+const AddReviewScreen = ({props, movies}) => {
+
+  const films = movies;
+  const id = parseInt(props.match.params.id, 10);
+  const movie = findObjInArrayById(films, id);
+
+  const {name, posterImage, backgroundImage, description, rating, scoresCount, director, starring, genre, released} = movie;
+
   return (
     <section className="movie-card movie-card--full">
       <div className="movie-card__header">
         <div className="movie-card__bg">
-          <img src="img/bg-the-grand-budapest-hotel.jpg" alt="The Grand Budapest Hotel"/>
+          <img src={backgroundImage} alt={name}/>
         </div>
 
         <h1 className="visually-hidden">WTW</h1>
@@ -17,7 +29,7 @@ const AddReviewScreen = () => {
           <nav className="breadcrumbs">
             <ul className="breadcrumbs__list">
               <li className="breadcrumbs__item">
-                <a href="movie-page.html" className="breadcrumbs__link">The Grand Budapest Hotel</a>
+                <Link to={`/films/${id}`} className="breadcrumbs__link">{name}</Link>
               </li>
               <li className="breadcrumbs__item">
                 <a className="breadcrumbs__link">Add review</a>
@@ -33,7 +45,7 @@ const AddReviewScreen = () => {
         </header>
 
         <div className="movie-card__poster movie-card__poster--small">
-          <img src="img/the-grand-budapest-hotel-poster.jpg" alt="The Grand Budapest Hotel poster" width="218"
+          <img src={posterImage} alt={name} width="218"
             height="327"/>
         </div>
       </div>
@@ -87,6 +99,12 @@ const AddReviewScreen = () => {
 
     </section>
   );
+};
+
+AddReviewScreen.propTypes = {
+  movies: PropTypes.arrayOf(movieShape),
+  props: objectPropType,
+  match: objectPropType,
 };
 
 export default AddReviewScreen;

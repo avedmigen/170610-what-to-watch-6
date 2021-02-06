@@ -17,6 +17,7 @@ const MoviePageScreen = ({props, movies}) => {
   const movie = findObjInArrayById(films, id);
 
   const {name, posterImage, backgroundImage, description, rating, scoresCount, director, starring, genre, released} = movie;
+
   return (
     <>
       <section className="movie-card movie-card--full">

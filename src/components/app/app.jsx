@@ -37,8 +37,14 @@ const App = ({promo, movies}) => (
           />
         )} >
       </Route>
-      <Route exact path="/films/:id/review">
-        <AddReviewScreen />
+      <Route exact
+        path="/films/:id/review"
+        render = {(props) => (
+          <AddReviewScreen
+            props = {props}
+            movies = {movies}
+          />
+        )} >
       </Route>
       <Route exact path="/player/:id">
         <PlayerScreen />
