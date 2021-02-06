@@ -19,3 +19,5 @@ export const movieShape = PropTypes.shape({
   released: PropTypes.number.isRequired,
   isFavorite: PropTypes.bool.isRequired,
 });
+
+export const objectPropType = PropTypes.object;

@@ -2,7 +2,7 @@ import React from "react";
 import PropTypes from "prop-types";
 import {Link} from 'react-router-dom';
 
-import {movieShape} from "../../types";
+import {movieShape, objectPropType} from "../../types";
 
 import SmallMovieCard from "../small-movie-card/small-movie-card";
 import LogoHeader from "../logo-header/logo-header";
@@ -10,10 +10,10 @@ import LogoFooter from "../logo-footer/logo-footer";
 import PlayButton from "../play-button/play-button";
 import {findObjInArrayById} from "../../utils";
 
-const MoviePageScreen = (props) => {
+const MoviePageScreen = ({props, movies}) => {
 
-  const films = props.movies;
-  const id = parseInt(props.props.match.params.id, 10);
+  const films = movies;
+  const id = parseInt(props.match.params.id, 10);
   const movie = findObjInArrayById(films, id);
 
   const {name, posterImage, backgroundImage, description, rating, scoresCount, director, starring, genre, released} = movie;
@@ -124,7 +124,9 @@ const MoviePageScreen = (props) => {
 };
 
 MoviePageScreen.propTypes = {
-  movies: PropTypes.arrayOf(movieShape)
+  movies: PropTypes.arrayOf(movieShape),
+  props: objectPropType,
+  match: objectPropType,
 };
 
 export default MoviePageScreen;
