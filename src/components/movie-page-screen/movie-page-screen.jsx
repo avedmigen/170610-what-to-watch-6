@@ -1,6 +1,5 @@
 import React from "react";
 import PropTypes from "prop-types";
-import {Link} from 'react-router-dom';
 
 import {movieShape, objectPropType} from "../../types";
 
@@ -8,6 +7,8 @@ import SmallMovieCard from "../small-movie-card/small-movie-card";
 import LogoHeader from "../logo-header/logo-header";
 import LogoFooter from "../logo-footer/logo-footer";
 import PlayButton from "../play-button/play-button";
+import MyListButton from "../my-list-button/my-list-button";
+import AddReviewButton from "../add-review-button/add-review-button";
 import {findObjInArrayById} from "../../utils";
 
 const MoviePageScreen = ({props, movies}) => {
@@ -47,14 +48,9 @@ const MoviePageScreen = ({props, movies}) => {
               </p>
 
               <div className="movie-card__buttons">
-                <PlayButton />
-                <Link to="/mylist" className="btn btn--list movie-card__button" type="button">
-                  <svg viewBox="0 0 19 20" width="19" height="20">
-                    <use xlinkHref="#add"></use>
-                  </svg>
-                  <span>My list</span>
-                </Link>
-                <Link to={`/films/${id}/review`} className="btn movie-card__button">Add review</Link>
+                <PlayButton id = {id} />
+                <MyListButton />
+                <AddReviewButton id = {id} />
               </div>
             </div>
           </div>

@@ -2,6 +2,8 @@ import React from "react";
 import PropTypes from "prop-types";
 import {BrowserRouter, Route, Switch} from 'react-router-dom';
 
+import {movieShape} from "../../types";
+
 import MainScreen from "../main-screen/main-screen";
 import SignInScreen from "../sign-in-screen/sign-in-screen";
 import MyListScreen from "../mylist-screen/mylist-screen";
@@ -10,7 +12,6 @@ import AddReviewScreen from "../add-review-screen/add-review-screen";
 import PlayerScreen from "../player-screen/player-screen";
 import NotFoundScreen from "../not-found-screen/not-found-screen";
 
-import {movieShape} from "../../types";
 
 const App = ({promo, movies}) => (
   <BrowserRouter>
@@ -46,8 +47,15 @@ const App = ({promo, movies}) => (
           />
         )} >
       </Route>
-      <Route exact path="/player/:id">
-        <PlayerScreen />
+      <Route exact
+        path="/player/:id"
+        render = {(props) => (
+          <PlayerScreen
+            props = {props}
+            promo = {promo}
+            movies = {movies}
+          />
+        )} >
       </Route>
       <Route>
         <NotFoundScreen />

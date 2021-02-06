@@ -1,6 +1,23 @@
 import React from "react";
+import {findObjInArrayById} from "../../utils";
+import PropTypes from "prop-types";
 
-const PlayerScreen = () => {
+import {movieShape, objectPropType} from "../../types";
+
+const PlayerScreen = ({props, promo, movies}) => {
+
+  const films = movies;
+  const id = parseInt(props.match.params.id, 10);
+  const movie = findObjInArrayById(films, id);
+
+  const name = () => {
+    if (id === promo.id) {
+      return promo.name;
+    } else {
+      return movie.name;
+    }
+  };
+
   return (
     <div className="player">
       <video src="#" className="player__video" poster="img/player-poster.jpg"></video>
@@ -11,7 +28,7 @@ const PlayerScreen = () => {
         <div className="player__controls-row">
           <div className="player__time">
             <progress className="player__progress" value="30" max="100"></progress>
-            <div className="player__toggler" style="left: 30%;">Toggler</div>
+            <div className="player__toggler" style={{left: 30 + `%`}}>Toggler</div>
           </div>
           <div className="player__time-value">1:30:29</div>
         </div>
@@ -23,7 +40,7 @@ const PlayerScreen = () => {
             </svg>
             <span>Play</span>
           </button>
-          <div className="player__name">Transpotting</div>
+          <div className="player__name">{ name() }</div>
 
           <button type="button" className="player__full-screen">
             <svg viewBox="0 0 27 27" width="27" height="27">
@@ -35,6 +52,13 @@ const PlayerScreen = () => {
       </div>
     </div>
   );
+};
+
+PlayerScreen.propTypes = {
+  promo: objectPropType,
+  movies: PropTypes.arrayOf(movieShape),
+  props: objectPropType,
+  match: objectPropType,
 };
 
 export default PlayerScreen;

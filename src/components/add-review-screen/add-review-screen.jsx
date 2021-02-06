@@ -1,10 +1,12 @@
 import React from "react";
+import {Link} from "react-router-dom";
+import PropTypes from "prop-types";
+
+import {movieShape, objectPropType} from "../../types";
+
 import LogoHeader from "../logo-header/logo-header";
 import {findObjInArrayById} from "../../utils";
-import PropTypes from "prop-types";
-import {movieShape, objectPropType} from "../../types";
-import MoviePageScreen from "../movie-page-screen/movie-page-screen";
-import {Link} from "react-router-dom";
+
 
 const AddReviewScreen = ({props, movies}) => {
 
@@ -12,7 +14,7 @@ const AddReviewScreen = ({props, movies}) => {
   const id = parseInt(props.match.params.id, 10);
   const movie = findObjInArrayById(films, id);
 
-  const {name, posterImage, backgroundImage, description, rating, scoresCount, director, starring, genre, released} = movie;
+  const {name, posterImage, backgroundImage} = movie;
 
   return (
     <section className="movie-card movie-card--full">
