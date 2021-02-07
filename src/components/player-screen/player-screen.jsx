@@ -2,7 +2,7 @@ import React from "react";
 import {findObjInArrayById} from "../../utils";
 import PropTypes from "prop-types";
 
-import {movieShape, objectPropType} from "../../types";
+import {movieShape} from "../../types";
 
 const PlayerScreen = ({props, promo, movies}) => {
 
@@ -10,13 +10,7 @@ const PlayerScreen = ({props, promo, movies}) => {
   const id = parseInt(props.match.params.id, 10);
   const movie = findObjInArrayById(films, id);
 
-  const name = () => {
-    if (id === promo.id) {
-      return promo.name;
-    } else {
-      return movie.name;
-    }
-  };
+  const getMovieName = () => id === promo.id ? promo.name : movie.name;
 
   return (
     <div className="player">
@@ -40,7 +34,7 @@ const PlayerScreen = ({props, promo, movies}) => {
             </svg>
             <span>Play</span>
           </button>
-          <div className="player__name">{ name() }</div>
+          <div className="player__name">{ getMovieName() }</div>
 
           <button type="button" className="player__full-screen">
             <svg viewBox="0 0 27 27" width="27" height="27">
@@ -55,10 +49,8 @@ const PlayerScreen = ({props, promo, movies}) => {
 };
 
 PlayerScreen.propTypes = {
-  promo: objectPropType,
   movies: PropTypes.arrayOf(movieShape),
-  props: objectPropType,
-  match: objectPropType,
+  promo: PropTypes.arrayOf(movieShape),
 };
 
 export default PlayerScreen;

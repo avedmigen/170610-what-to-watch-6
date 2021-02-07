@@ -2,17 +2,16 @@ import React from "react";
 import {Link} from "react-router-dom";
 import PropTypes from "prop-types";
 
-import {movieShape, objectPropType} from "../../types";
+import {movieShape} from "../../types";
 
 import LogoHeader from "../logo-header/logo-header";
-import {findObjInArrayById} from "../../utils";
+import {findObjInArrayById, getIdFromRouteProps} from "../../utils";
 
 
 const AddReviewScreen = ({props, movies}) => {
 
-  const films = movies;
-  const id = parseInt(props.match.params.id, 10);
-  const movie = findObjInArrayById(films, id);
+  const id = getIdFromRouteProps(props);
+  const movie = findObjInArrayById(movies, id);
 
   const {name, posterImage, backgroundImage} = movie;
 
@@ -105,8 +104,6 @@ const AddReviewScreen = ({props, movies}) => {
 
 AddReviewScreen.propTypes = {
   movies: PropTypes.arrayOf(movieShape),
-  props: objectPropType,
-  match: objectPropType,
 };
 
 export default AddReviewScreen;

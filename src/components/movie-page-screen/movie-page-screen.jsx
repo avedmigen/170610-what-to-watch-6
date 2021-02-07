@@ -1,7 +1,7 @@
 import React from "react";
 import PropTypes from "prop-types";
 
-import {movieShape, objectPropType} from "../../types";
+import {movieShape} from "../../types";
 
 import SmallMovieCard from "../small-movie-card/small-movie-card";
 import LogoHeader from "../logo-header/logo-header";
@@ -9,13 +9,12 @@ import LogoFooter from "../logo-footer/logo-footer";
 import PlayButton from "../play-button/play-button";
 import MyListButton from "../my-list-button/my-list-button";
 import AddReviewButton from "../add-review-button/add-review-button";
-import {findObjInArrayById} from "../../utils";
+import {findObjInArrayById, getIdFromRouteProps} from "../../utils";
 
 const MoviePageScreen = ({props, movies}) => {
 
-  const films = movies;
-  const id = parseInt(props.match.params.id, 10);
-  const movie = findObjInArrayById(films, id);
+  const id = getIdFromRouteProps(props);
+  const movie = findObjInArrayById(movies, id);
 
   const {name, posterImage, backgroundImage, description, rating, scoresCount, director, starring, genre, released} = movie;
 
@@ -103,7 +102,7 @@ const MoviePageScreen = ({props, movies}) => {
           <h2 className="catalog__title">More like this</h2>
 
           <div className="catalog__movies-list">
-            {films.map((film, i) => <SmallMovieCard key={film + i} movie={film} />)}
+            {movies.map((film, i) => <SmallMovieCard key={film + i} movie={film} />)}
           </div>
 
         </section>
@@ -122,8 +121,6 @@ const MoviePageScreen = ({props, movies}) => {
 
 MoviePageScreen.propTypes = {
   movies: PropTypes.arrayOf(movieShape),
-  props: objectPropType,
-  match: objectPropType,
 };
 
 export default MoviePageScreen;
