@@ -1,14 +1,13 @@
 import React from "react";
-import {findObjInArrayById} from "../../utils";
+import {findObjInArrayById, getIdFromRouteProps} from "../../utils";
 import PropTypes from "prop-types";
 
 import {movieShape} from "../../types";
 
 const PlayerScreen = ({props, promo, movies}) => {
 
-  const films = movies;
-  const id = parseInt(props.match.params.id, 10);
-  const movie = findObjInArrayById(films, id);
+  const id = getIdFromRouteProps(props);
+  const movie = findObjInArrayById(movies, id);
 
   const getMovieName = () => id === promo.id ? promo.name : movie.name;
 
@@ -50,7 +49,8 @@ const PlayerScreen = ({props, promo, movies}) => {
 
 PlayerScreen.propTypes = {
   movies: PropTypes.arrayOf(movieShape),
-  promo: PropTypes.arrayOf(movieShape),
+  props: PropTypes.object,
+  promo: movieShape,
 };
 
 export default PlayerScreen;

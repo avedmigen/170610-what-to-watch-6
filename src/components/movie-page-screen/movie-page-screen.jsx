@@ -121,6 +121,7 @@ const MoviePageScreen = ({props, movies}) => {
 
 MoviePageScreen.propTypes = {
   movies: PropTypes.arrayOf(movieShape),
+  props: PropTypes.object
 };
 
 export default MoviePageScreen;

@@ -104,6 +104,7 @@ const AddReviewScreen = ({props, movies}) => {
 
 AddReviewScreen.propTypes = {
   movies: PropTypes.arrayOf(movieShape),
+  props: PropTypes.object
 };
 
 export default AddReviewScreen;
