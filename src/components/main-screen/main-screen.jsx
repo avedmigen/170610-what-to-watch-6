@@ -1,8 +1,15 @@
 import React from "react";
-import SmallMovieCard from "../small-movie-card/small-movie-card";
 import PropTypes from "prop-types";
 
+import {movieShape} from "../../types";
+
+import SmallMovieCard from "../small-movie-card/small-movie-card";
+import PlayButton from "../play-button/play-button";
+import MyListButton from "../my-list-button/my-list-button";
+
 const MainScreen = ({promo, movies}) => {
+
+  const {id} = promo;
 
   return (
     <>
@@ -44,18 +51,8 @@ const MainScreen = ({promo, movies}) => {
               </p>
 
               <div className="movie-card__buttons">
-                <button className="btn btn--play movie-card__button" type="button">
-                  <svg viewBox="0 0 19 19" width="19" height="19">
-                    <use xlinkHref="#play-s"></use>
-                  </svg>
-                  <span>Play</span>
-                </button>
-                <button className="btn btn--list movie-card__button" type="button">
-                  <svg viewBox="0 0 19 20" width="19" height="20">
-                    <use xlinkHref="#add"></use>
-                  </svg>
-                  <span>My list</span>
-                </button>
+                <PlayButton id = {id} />
+                <MyListButton />
               </div>
             </div>
           </div>
@@ -126,14 +123,8 @@ const MainScreen = ({promo, movies}) => {
 };
 
 MainScreen.propTypes = {
-  promo: PropTypes.shape({
-    name: PropTypes.string.isRequired,
-    genre: PropTypes.string.isRequired,
-    released: PropTypes.number.isRequired,
-    posterImage: PropTypes.string.isRequired,
-    backgroundImage: PropTypes.string.isRequired,
-  }),
-  movies: PropTypes.array,
+  promo: movieShape,
+  movies: PropTypes.arrayOf(movieShape)
 };
 
 export default MainScreen;
