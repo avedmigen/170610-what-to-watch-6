@@ -9,3 +9,7 @@ export const getIdFromRouteProps = (props) => {
 export const renameDashedAttribute = (attr) => {
   return attr.replace(/(-.)/g, (x) => x[1].toUpperCase());
 };
+
+export const checkEvtClassName = (evt, name) => {
+  return evt.target.classList.contains(name);
+};
