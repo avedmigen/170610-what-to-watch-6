@@ -10,7 +10,7 @@ import {findObjInArrayById, getIdFromRouteProps, renameDashedAttribute} from "..
 
 const AddReviewScreen = ({props, movies}) => {
 
-  const [userForm, setUserForm] = useState({
+  const [reviewForm, setReviewForm] = useState({
     rating: 0,
     reviewText: ``,
   });
@@ -21,7 +21,7 @@ const AddReviewScreen = ({props, movies}) => {
 
   const handleFieldChange = (evt) => {
     const {name, value} = evt.target;
-    setUserForm({...userForm, [renameDashedAttribute(name)]: value});
+    setReviewForm({...reviewForm, [renameDashedAttribute(name)]: value});
   };
 
   const id = getIdFromRouteProps(props);
