@@ -13,7 +13,7 @@ const films = [
     scoresCount: 140,
     director: `Lorem Murray`,
     starring: [`Lorem Murray`, `Lorem Norton`, `Lorem Law`, `Lorem Dafoe`, `Lorem Ronan`],
-    runTime: 19,
+    runTime: 352,
     genre: `Comedy`,
     released: 2014,
     isFavorite: false
@@ -32,7 +32,7 @@ const films = [
     scoresCount: 141,
     director: `Lorem Norton`,
     starring: [`Lorem Murray`, `Lorem Norton`, `Lorem Law`, `Lorem Dafoe`, `Lorem Ronan`],
-    runTime: 19,
+    runTime: 369,
     genre: `Crime`,
     released: 2013,
     isFavorite: false
@@ -51,7 +51,7 @@ const films = [
     scoresCount: 142,
     director: `Lorem Law`,
     starring: [`Lorem Murray`, `Lorem Norton`, `Lorem Law`, `Lorem Dafoe`, `Lorem Ronan`],
-    runTime: 19,
+    runTime: 191,
     genre: `Documentary`,
     released: 2012,
     isFavorite: false
@@ -70,7 +70,7 @@ const films = [
     scoresCount: 143,
     director: `Lorem Dafoe`,
     starring: [`Lorem Murray`, `Lorem Norton`, `Lorem Law`, `Lorem Dafoe`, `Lorem Ronan`],
-    runTime: 19,
+    runTime: 192,
     genre: `Drama`,
     released: 2011,
     isFavorite: false
@@ -89,7 +89,7 @@ const films = [
     scoresCount: 144,
     director: `Lorem Ronan`,
     starring: [`Lorem Murray`, `Lorem Norton`, `Lorem Law`, `Lorem Dafoe`, `Lorem Ronan`],
-    runTime: 19,
+    runTime: 193,
     genre: `Horror`,
     released: 2014,
     isFavorite: false
@@ -108,7 +108,7 @@ const films = [
     scoresCount: 145,
     director: `Lorem Lorem`,
     starring: [`Lorem Murray`, `Lorem Norton`, `Lorem Law`, `Lorem Dafoe`, `Lorem Ronan`],
-    runTime: 19,
+    runTime: 194,
     genre: `Kids & Family`,
     released: 2013,
     isFavorite: false
@@ -127,7 +127,7 @@ const films = [
     scoresCount: 146,
     director: `Lorem Lorem`,
     starring: [`Lorem Murray`, `Lorem Norton`, `Lorem Law`, `Lorem Dafoe`, `Lorem Ronan`],
-    runTime: 19,
+    runTime: 195,
     genre: `Romance`,
     released: 2012,
     isFavorite: false
@@ -146,7 +146,7 @@ const films = [
     scoresCount: 147,
     director: `Lorem Lorem`,
     starring: [`Lorem Murray`, `Lorem Norton`, `Lorem Law`, `Lorem Dafoe`, `Lorem Ronan`],
-    runTime: 19,
+    runTime: 196,
     genre: `Sci-Fi`,
     released: 2011,
     isFavorite: false
@@ -165,7 +165,7 @@ const films = [
     scoresCount: 148,
     director: `Lorem Lorem`,
     starring: [`Lorem Murray`, `Lorem Norton`, `Lorem Law`, `Lorem Dafoe`, `Lorem Ronan`],
-    runTime: 19,
+    runTime: 197,
     genre: `Thriller`,
     released: 2014,
     isFavorite: false
@@ -184,7 +184,7 @@ const films = [
     scoresCount: 143,
     director: `Lorem Ronan`,
     starring: [`Lorem Murray`, `Lorem Norton`, `Lorem Law`, `Lorem Dafoe`, `Lorem Ronan`],
-    runTime: 19,
+    runTime: 197,
     genre: `Comedy`,
     released: 2014,
     isFavorite: false
@@ -203,7 +203,7 @@ const films = [
     scoresCount: 130,
     director: `Lorem Dafoe`,
     starring: [`Lorem Murray`, `Lorem Norton`, `Lorem Law`, `Lorem Dafoe`, `Lorem Ronan`],
-    runTime: 19,
+    runTime: 198,
     genre: `Crime`,
     released: 2012,
     isFavorite: false
@@ -222,7 +222,7 @@ const films = [
     scoresCount: 131,
     director: `Lorem Law`,
     starring: [`Lorem Murray`, `Lorem Norton`, `Lorem Law`, `Lorem Dafoe`, `Lorem Ronan`],
-    runTime: 19,
+    runTime: 199,
     genre: `Documentary`,
     released: 2011,
     isFavorite: false
@@ -241,7 +241,7 @@ const films = [
     scoresCount: 132,
     director: `Lorem Norton`,
     starring: [`Lorem Murray`, `Lorem Norton`, `Lorem Law`, `Lorem Dafoe`, `Lorem Ronan`],
-    runTime: 19,
+    runTime: 200,
     genre: `Drama`,
     released: 2014,
     isFavorite: false
@@ -260,7 +260,7 @@ const films = [
     scoresCount: 133,
     director: `Lorem Murray`,
     starring: [`Lorem Murray`, `Lorem Norton`, `Lorem Law`, `Lorem Dafoe`, `Lorem Ronan`],
-    runTime: 19,
+    runTime: 201,
     genre: `Horror`,
     released: 2013,
     isFavorite: false
@@ -279,7 +279,7 @@ const films = [
     scoresCount: 134,
     director: `Lorem Lorem`,
     starring: [`Lorem Murray`, `Lorem Norton`, `Lorem Law`, `Lorem Dafoe`, `Lorem Ronan`],
-    runTime: 19,
+    runTime: 202,
     genre: `Kids & Family`,
     released: 2012,
     isFavorite: false
@@ -298,7 +298,7 @@ const films = [
     scoresCount: 135,
     director: `Lorem Ronan`,
     starring: [`Lorem Murray`, `Lorem Norton`, `Lorem Law`, `Lorem Dafoe`, `Lorem Ronan`],
-    runTime: 19,
+    runTime: 203,
     genre: `Romance`,
     released: 2011,
     isFavorite: false
@@ -317,7 +317,7 @@ const films = [
     scoresCount: 136,
     director: `Lorem Dafoe`,
     starring: [`Lorem Murray`, `Lorem Norton`, `Lorem Law`, `Lorem Dafoe`, `Lorem Ronan`],
-    runTime: 19,
+    runTime: 204,
     genre: `Sci-Fi`,
     released: 2014,
     isFavorite: false
@@ -336,7 +336,7 @@ const films = [
     scoresCount: 137,
     director: `Lorem Law`,
     starring: [`Lorem Murray`, `Lorem Norton`, `Lorem Law`, `Lorem Dafoe`, `Lorem Ronan`],
-    runTime: 19,
+    runTime: 205,
     genre: `Thriller`,
     released: 2013,
     isFavorite: false
@@ -355,7 +355,7 @@ const films = [
     scoresCount: 138,
     director: `Lorem Norton`,
     starring: [`Lorem Murray`, `Lorem Norton`, `Lorem Law`, `Lorem Dafoe`, `Lorem Ronan`],
-    runTime: 19,
+    runTime: 206,
     genre: `Comedy`,
     released: 2012,
     isFavorite: false
@@ -374,7 +374,7 @@ const films = [
     scoresCount: 139,
     director: `Lorem Murray`,
     starring: [`Lorem Murray`, `Lorem Norton`, `Lorem Law`, `Lorem Dafoe`, `Lorem Ronan`],
-    runTime: 19,
+    runTime: 207,
     genre: `Crime`,
     released: 2011,
     isFavorite: false

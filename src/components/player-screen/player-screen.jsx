@@ -10,10 +10,11 @@ const PlayerScreen = ({props, promo, movies}) => {
   const movie = findObjInArrayById(movies, id);
 
   const getMovieName = () => id === promo.id ? promo.name : movie.name;
+  const getVideoLink = () => id === promo.id ? promo.videoLink : movie.videoLink;
 
   return (
     <div className="player">
-      <video src="#" className="player__video" poster="img/player-poster.jpg"></video>
+      <video src={getVideoLink()} className="player__video" poster="img/player-poster.jpg"></video>
 
       <button type="button" className="player__exit">Exit</button>
 
