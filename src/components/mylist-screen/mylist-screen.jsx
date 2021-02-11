@@ -3,9 +3,9 @@ import PropTypes from "prop-types";
 
 import {movieShape} from "../../types";
 
-import SmallMovieCard from "../small-movie-card/small-movie-card";
 import LogoHeader from "../logo-header/logo-header";
 import LogoFooter from "../logo-footer/logo-footer";
+import MoviesList from "../movies-list/movies-list";
 
 const MyListScreen = ({movies}) => {
   return (
@@ -25,9 +25,7 @@ const MyListScreen = ({movies}) => {
       <section className="catalog">
         <h2 className="catalog__title visually-hidden">Catalog</h2>
 
-        <div className="catalog__movies-list">
-          {movies.map((movie, i) => <SmallMovieCard key={movie + i} movie={movie} />)}
-        </div>
+        <MoviesList movies={movies}/>
 
       </section>
 

@@ -2,7 +2,7 @@ import React, {useState} from "react";
 import {Link} from "react-router-dom";
 import PropTypes from "prop-types";
 
-import {movieShape} from "../../types";
+import {movieShape, withRouterHistoryShape} from "../../types";
 
 import LogoHeader from "../logo-header/logo-header";
 import {findObjInArrayById, getIdFromRouteProps, renameDashedAttribute, checkEvtClassName} from "../../utils";
@@ -15,9 +15,8 @@ const AddReviewScreen = ({props, movies}) => {
     reviewText: ``,
   });
 
-  const handleSubmit = (evt) => {
-    evt.preventDefault();
-    /*    console.log(`Форма отправлена`);*/
+  const handleSubmit = () => {
+    /*    console.log(`Form Submitted`);*/
   };
 
   const handleFieldChange = (evt) => {
@@ -121,7 +120,7 @@ const AddReviewScreen = ({props, movies}) => {
 
 AddReviewScreen.propTypes = {
   movies: PropTypes.arrayOf(movieShape),
-  props: PropTypes.object
+  props: PropTypes.objectOf(withRouterHistoryShape)
 };
 
 export default AddReviewScreen;
