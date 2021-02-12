@@ -5,7 +5,7 @@ import PropTypes from "prop-types";
 import {movieShape, withRouterHistoryShape} from "../../types";
 
 import LogoHeader from "../logo-header/logo-header";
-import {findObjInArrayById, getIdFromRouteProps, renameDashedAttribute, checkEvtClassName} from "../../utils";
+import {findObjInArrayById, getIdFromRouteProps, convertDashedToCamelCase} from "../../utils";
 
 
 const AddReviewScreen = ({props, movies}) => {
@@ -20,10 +20,8 @@ const AddReviewScreen = ({props, movies}) => {
   };
 
   const handleFieldChange = (evt) => {
-    if (checkEvtClassName(evt, `rating__input`) || checkEvtClassName(evt, `add-review__textarea`)) {
-      const {name, value} = evt.target;
-      setReviewForm({...reviewForm, [renameDashedAttribute(name)]: value});
-    }
+    const {name, value} = evt.target;
+    setReviewForm({...reviewForm, [convertDashedToCamelCase(name)]: value});
   };
 
   const id = getIdFromRouteProps(props);
@@ -120,7 +118,7 @@ const AddReviewScreen = ({props, movies}) => {
 
 AddReviewScreen.propTypes = {
   movies: PropTypes.arrayOf(movieShape),
-  props: PropTypes.objectOf(withRouterHistoryShape)
+  props: PropTypes.objectOf(withRouterHistoryShape),
 };
 
 export default AddReviewScreen;

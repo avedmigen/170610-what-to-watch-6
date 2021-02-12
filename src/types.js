@@ -1,9 +1,9 @@
 import PropTypes from "prop-types";
 
 export const withRouterHistoryShape = PropTypes.shape({
-  match: PropTypes.object.isRequired,
-  location: PropTypes.object.isRequired,
-  history: PropTypes.object.isRequired
+  match: PropTypes.object,
+  location: PropTypes.object,
+  history: PropTypes.object,
 });
 
 export const movieShape = PropTypes.shape({

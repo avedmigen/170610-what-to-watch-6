@@ -6,10 +6,6 @@ export const getIdFromRouteProps = (props) => {
   return Number(props.match.params.id);
 };
 
-export const renameDashedAttribute = (attr) => {
-  return attr.replace(/(-.)/g, (x) => x[1].toUpperCase());
-};
-
-export const checkEvtClassName = (evt, name) => {
-  return evt.target.classList.contains(name);
+export const convertDashedToCamelCase = (item) => {
+  return item.replace(/(-.)/g, (x) => x[1].toUpperCase());
 };

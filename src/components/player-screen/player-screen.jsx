@@ -2,7 +2,7 @@ import React from "react";
 import {findObjInArrayById, getIdFromRouteProps} from "../../utils";
 import PropTypes from "prop-types";
 
-import {movieShape} from "../../types";
+import {movieShape, withRouterHistoryShape} from "../../types";
 
 const PlayerScreen = ({props, promo, movies}) => {
 
@@ -50,7 +50,7 @@ const PlayerScreen = ({props, promo, movies}) => {
 
 PlayerScreen.propTypes = {
   movies: PropTypes.arrayOf(movieShape),
-  props: PropTypes.object,
+  props: PropTypes.objectOf(withRouterHistoryShape),
   promo: movieShape,
 };
 

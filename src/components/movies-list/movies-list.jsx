@@ -5,18 +5,17 @@ import PropTypes from "prop-types";
 
 const MoviesList = ({movies}) => {
 
-  const [activeMovieId, setActiveMovieId] = useState({});
+  const [, setActiveMovie] = useState();
 
   const handleOnMouseOver = (evt, movie) => {
-    evt.preventDefault();
-    setActiveMovieId(Object.assign(activeMovieId, movie));
+    setActiveMovie(movie);
   };
 
   return (
     <div className="catalog__movies-list">
-      {movies.map((movie, i) =>
+      {movies.map((movie, id) =>
         <SmallMovieCard
-          key={movie + i}
+          key={id}
           movie={movie}
           onMouseOver={handleOnMouseOver}
         />)}
