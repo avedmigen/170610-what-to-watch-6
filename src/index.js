@@ -2,13 +2,13 @@ import React from "react";
 import ReactDOM from "react-dom";
 
 import App from "./components/app/app";
-import movies from "./mock/movies";
-import promo from "./mock/promo";
+import {films} from "./mocks/films";
+import promo from "./mocks/promo";
 
 ReactDOM.render(
     <App
       promo = {promo}
-      movies = {movies}
+      movies = {films}
     />,
     document.querySelector(`#root`)
 );

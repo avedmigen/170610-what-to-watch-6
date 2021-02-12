@@ -3,13 +3,13 @@ import PropTypes from "prop-types";
 
 import {movieShape} from "../../types";
 
-import SmallMovieCard from "../small-movie-card/small-movie-card";
 import LogoHeader from "../logo-header/logo-header";
 import LogoFooter from "../logo-footer/logo-footer";
 import PlayButton from "../play-button/play-button";
 import MyListButton from "../my-list-button/my-list-button";
 import AddReviewButton from "../add-review-button/add-review-button";
 import {findObjInArrayById, getIdFromRouteProps} from "../../utils";
+import MoviesList from "../movies-list/movies-list";
 
 const MoviePageScreen = ({props, movies}) => {
 
@@ -101,9 +101,7 @@ const MoviePageScreen = ({props, movies}) => {
         <section className="catalog catalog--like-this">
           <h2 className="catalog__title">More like this</h2>
 
-          <div className="catalog__movies-list">
-            {movies.map((film, i) => <SmallMovieCard key={film + i} movie={film} />)}
-          </div>
+          <MoviesList movies={movies}/>
 
         </section>
 

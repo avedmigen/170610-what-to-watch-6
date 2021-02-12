@@ -3,9 +3,9 @@ import PropTypes from "prop-types";
 
 import {movieShape} from "../../types";
 
-import SmallMovieCard from "../small-movie-card/small-movie-card";
 import PlayButton from "../play-button/play-button";
 import MyListButton from "../my-list-button/my-list-button";
+import MoviesList from "../movies-list/movies-list";
 
 const MainScreen = ({promo, movies}) => {
 
@@ -95,9 +95,7 @@ const MainScreen = ({promo, movies}) => {
             </li>
           </ul>
 
-          <div className="catalog__movies-list">
-            {movies.map((movie, i) => <SmallMovieCard key={movie + i} movie={movie} />)}
-          </div>
+          <MoviesList movies={movies}/>
 
           <div className="catalog__more">
             <button className="catalog__button" type="button">Show more</button>

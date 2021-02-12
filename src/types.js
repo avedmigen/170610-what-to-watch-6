@@ -1,5 +1,11 @@
 import PropTypes from "prop-types";
 
+export const withRouterHistoryShape = PropTypes.shape({
+  match: PropTypes.object,
+  location: PropTypes.object,
+  history: PropTypes.object,
+});
+
 export const movieShape = PropTypes.shape({
   id: PropTypes.number.isRequired,
   name: PropTypes.string.isRequired,
