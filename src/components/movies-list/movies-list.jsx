@@ -5,10 +5,14 @@ import PropTypes from "prop-types";
 
 const MoviesList = ({movies}) => {
 
-  const [, setActiveMovie] = useState();
+  const [isActiveMovie, setActiveMovie] = useState(false);
 
-  const handleOnMouseOver = (evt, movie) => {
+  const handleOnMouseEnter = (evt, movie) => {
     setActiveMovie(movie);
+  };
+
+  const handleОnMouseLeave = () => {
+    setActiveMovie(false);
   };
 
   return (
@@ -17,7 +21,9 @@ const MoviesList = ({movies}) => {
         <SmallMovieCard
           key={id}
           movie={movie}
-          onMouseOver={handleOnMouseOver}
+          onMouseOver={handleOnMouseEnter}
+          onMouseLeave={handleОnMouseLeave}
+          isActiveMovie={isActiveMovie}
         />)}
     </div>
   );
