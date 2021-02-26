@@ -7,21 +7,17 @@ import VideoPlayer from "../video-player/video-player";
 const SmallMovieCard = ({movie}) => {
   const {id, name, previewImage, videoLink} = movie;
 
-  const [, setActiveMovie] = useState(null);
-
   const [isPlayerStarted, setPlayerStarted] = useState(false);
 
   return (
     <article className="small-movie-card catalog__movies-card"
       onMouseEnter={
         () => {
-          setActiveMovie(movie);
           setPlayerStarted(true);
         }
       }
       onMouseLeave={
         () => {
-          setActiveMovie(null);
           setPlayerStarted(false);
         }}>
       <div className="small-movie-card__image">
