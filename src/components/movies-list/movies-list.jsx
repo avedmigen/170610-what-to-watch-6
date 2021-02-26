@@ -5,7 +5,7 @@ import PropTypes from "prop-types";
 
 const MoviesList = ({movies}) => {
 
-  const [isActiveMovie, setActiveMovie] = useState(false);
+  const [, setActiveMovie] = useState(false);
 
   const handleOnMouseEnter = (evt, movie) => {
     setActiveMovie(movie);
@@ -23,7 +23,6 @@ const MoviesList = ({movies}) => {
           movie={movie}
           onMouseOver={handleOnMouseEnter}
           onMouseLeave={handleОnMouseLeave}
-          isActiveMovie={isActiveMovie}
         />)}
     </div>
   );

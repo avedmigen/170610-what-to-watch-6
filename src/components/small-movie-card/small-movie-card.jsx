@@ -5,30 +5,30 @@ import {movieShape} from "../../types";
 import VideoPlayer from "../video-player/video-player";
 
 const SmallMovieCard = ({movie, onMouseOver, onMouseLeave}) => {
-  const {id, name, previewImage, posterImage, videoLink} = movie;
+  const {id, name, previewImage, videoLink} = movie;
 
-  const [startPlayer, setStartPlayer] = useState(false);
+  const [isPlayerStarted, setPlayerStarted] = useState(false);
 
   return (
     <article className="small-movie-card catalog__movies-card"
       onMouseEnter={
         () => {
           onMouseOver(movie);
-          setStartPlayer(true);
+          setPlayerStarted(true);
         }
       }
       onMouseLeave={
         () => {
           onMouseLeave();
-          setStartPlayer(false);
+          setPlayerStarted(false);
         }}>
       <div className="small-movie-card__image">
-        {startPlayer ?
+        {isPlayerStarted ?
           <VideoPlayer
-            posterImage = {posterImage}
+            previewImage= {previewImage}
             videoLink = {videoLink}
-            startPlayer = {startPlayer}
-            setStartPlayer = {setStartPlayer}
+            startPlayer = {isPlayerStarted}
+            setStartPlayer = {setPlayerStarted}
           /> :
           <img src={previewImage} alt={name} width="280" height="175"/> }
       </div>
