@@ -9,17 +9,13 @@ const SmallMovieCard = ({movie}) => {
 
   const [isPlayerStarted, setPlayerStarted] = useState(false);
 
+  const togglePlayerStarted = () => setPlayerStarted(!isPlayerStarted);
+
   return (
     <article className="small-movie-card catalog__movies-card"
-      onMouseEnter={
-        () => {
-          setPlayerStarted(true);
-        }
-      }
-      onMouseLeave={
-        () => {
-          setPlayerStarted(false);
-        }}>
+      onMouseEnter={ togglePlayerStarted }
+      onMouseLeave={ togglePlayerStarted }>
+
       <div className="small-movie-card__image">
         {isPlayerStarted ?
           <VideoPlayer

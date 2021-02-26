@@ -3,6 +3,8 @@ import PropTypes from "prop-types";
 
 const VideoPlayer = ({previewImage, videoLink, startPlayer, setStartPlayer}) => {
 
+  const TIMEOUT = 1000;
+
   const videoRef = createRef();
 
   let timer = null;
@@ -11,7 +13,7 @@ const VideoPlayer = ({previewImage, videoLink, startPlayer, setStartPlayer}) => 
     if (startPlayer) {
       timer = setTimeout(() => {
         videoRef.current.play();
-      }, 1000);
+      }, TIMEOUT);
     }
 
     return () => {
