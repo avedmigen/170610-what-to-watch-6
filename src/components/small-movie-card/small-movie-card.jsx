@@ -4,8 +4,10 @@ import PropTypes from "prop-types";
 import {movieShape} from "../../types";
 import VideoPlayer from "../video-player/video-player";
 
-const SmallMovieCard = ({movie, onMouseOver, onMouseLeave}) => {
+const SmallMovieCard = ({movie}) => {
   const {id, name, previewImage, videoLink} = movie;
+
+  const [, setActiveMovie] = useState(null);
 
   const [isPlayerStarted, setPlayerStarted] = useState(false);
 
@@ -13,13 +15,13 @@ const SmallMovieCard = ({movie, onMouseOver, onMouseLeave}) => {
     <article className="small-movie-card catalog__movies-card"
       onMouseEnter={
         () => {
-          onMouseOver(movie);
+          setActiveMovie(movie);
           setPlayerStarted(true);
         }
       }
       onMouseLeave={
         () => {
-          onMouseLeave();
+          setActiveMovie(null);
           setPlayerStarted(false);
         }}>
       <div className="small-movie-card__image">
