@@ -1,9 +1,9 @@
 import React from "react";
 import PropTypes from "prop-types";
 import {connect} from "react-redux";
-import {getSortedMoviesByGenre} from "../../utils";
 
 import {movieShape} from "../../types";
+import {getSortedMoviesByGenre} from "../../utils";
 
 import PlayButton from "../play-button/play-button";
 import MyListButton from "../my-list-button/my-list-button";

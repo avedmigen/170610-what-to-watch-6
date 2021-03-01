@@ -1,8 +1,8 @@
 import React from "react";
 import {connect} from "react-redux";
 import PropTypes from "prop-types";
-import {movieShape} from "../../types";
 
+import {movieShape} from "../../types";
 import {ActionCreator} from "../../store/actions/action";
 import Genre from "../genre/genre";
 import {getUniqueGenres} from "../../utils";

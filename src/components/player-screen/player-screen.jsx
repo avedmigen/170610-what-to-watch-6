@@ -1,8 +1,10 @@
 import React from "react";
-import {findObjInArrayById, getIdFromRouteProps} from "../../utils";
+import {connect} from "react-redux";
 import PropTypes from "prop-types";
 
 import {movieShape, withRouterHistoryShape} from "../../types";
+import {findObjInArrayById, getIdFromRouteProps} from "../../utils";
+
 
 const PlayerScreen = ({props, promo, movies}) => {
 
@@ -54,4 +56,10 @@ PlayerScreen.propTypes = {
   promo: movieShape,
 };
 
-export default PlayerScreen;
+const mapStateToProps = (state) => ({
+  movies: state.movies,
+});
+
+export {PlayerScreen};
+export default connect(mapStateToProps)(PlayerScreen);
+

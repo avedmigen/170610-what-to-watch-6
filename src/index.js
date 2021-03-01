@@ -3,8 +3,8 @@ import ReactDOM from "react-dom";
 import {createStore} from "redux";
 import {Provider} from "react-redux";
 import {composeWithDevTools} from "redux-devtools-extension";
-import {reducer} from "../src/store/reducers/reducer";
 
+import {reducer} from "./store/reducers/reducer";
 import App from "./components/app/app";
 import promo from "./mocks/promo";
 

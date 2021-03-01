@@ -1,9 +1,9 @@
 import React, {useState} from "react";
 import {Link} from "react-router-dom";
+import {connect} from "react-redux";
 import PropTypes from "prop-types";
 
 import {movieShape, withRouterHistoryShape} from "../../types";
-
 import LogoHeader from "../logo-header/logo-header";
 import {findObjInArrayById, getIdFromRouteProps, convertDashedToCamelCase} from "../../utils";
 
@@ -121,4 +121,10 @@ AddReviewScreen.propTypes = {
   props: PropTypes.objectOf(withRouterHistoryShape),
 };
 
-export default AddReviewScreen;
+const mapStateToProps = (state) => ({
+  movies: state.movies,
+});
+
+export {AddReviewScreen};
+export default connect(mapStateToProps)(AddReviewScreen);
+

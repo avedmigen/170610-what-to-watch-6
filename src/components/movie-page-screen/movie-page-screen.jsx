@@ -1,4 +1,5 @@
 import React from "react";
+import {connect} from "react-redux";
 import PropTypes from "prop-types";
 
 import {movieShape} from "../../types";
@@ -122,4 +123,9 @@ MoviePageScreen.propTypes = {
   props: PropTypes.object
 };
 
-export default MoviePageScreen;
+const mapStateToProps = (state) => ({
+  movies: state.movies,
+});
+
+export {MoviePageScreen};
+export default connect(mapStateToProps)(MoviePageScreen);

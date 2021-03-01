@@ -1,11 +1,13 @@
 import React from "react";
 import PropTypes from "prop-types";
+import {connect} from "react-redux";
 
 import {movieShape} from "../../types";
 
 import LogoHeader from "../logo-header/logo-header";
 import LogoFooter from "../logo-footer/logo-footer";
 import MoviesList from "../movies-list/movies-list";
+
 
 const MyListScreen = ({movies}) => {
   return (
@@ -44,4 +46,9 @@ MyListScreen.propTypes = {
   movies: PropTypes.arrayOf(movieShape)
 };
 
-export default MyListScreen;
+const mapStateToProps = (state) => ({
+  movies: state.movies,
+});
+
+export {MyListScreen};
+export default connect(mapStateToProps)(MyListScreen);
