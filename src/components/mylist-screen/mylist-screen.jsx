@@ -8,7 +8,6 @@ import LogoHeader from "../logo-header/logo-header";
 import LogoFooter from "../logo-footer/logo-footer";
 import MoviesList from "../movies-list/movies-list";
 
-
 const MyListScreen = ({movies}) => {
   return (
     <div className="user-page">
@@ -51,4 +50,4 @@ const mapStateToProps = (state) => ({
 });
 
 export {MyListScreen};
-export default connect(mapStateToProps)(MyListScreen);
+export default connect(mapStateToProps, null)(MyListScreen);

@@ -128,4 +128,4 @@ const mapStateToProps = (state) => ({
 });
 
 export {MoviePageScreen};
-export default connect(mapStateToProps)(MoviePageScreen);
+export default connect(mapStateToProps, null)(MoviePageScreen);

@@ -7,7 +7,6 @@ import {movieShape, withRouterHistoryShape} from "../../types";
 import LogoHeader from "../logo-header/logo-header";
 import {findObjInArrayById, getIdFromRouteProps, convertDashedToCamelCase} from "../../utils";
 
-
 const AddReviewScreen = ({props, movies}) => {
 
   const [reviewForm, setReviewForm] = useState({
@@ -126,5 +125,5 @@ const mapStateToProps = (state) => ({
 });
 
 export {AddReviewScreen};
-export default connect(mapStateToProps)(AddReviewScreen);
+export default connect(mapStateToProps, null)(AddReviewScreen);
 

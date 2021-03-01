@@ -18,24 +18,19 @@ const App = ({promo, movies}) => (
     <Switch>
       <Route exact path="/">
         <MainScreen
-          promo = {promo}
-          movies = {movies} />
+          promo = {promo}/>
       </Route>
       <Route exact path="/login">
         <SignInScreen />
       </Route>
       <Route exact path="/mylist">
-        <MyListScreen
-          movies = {movies}
-        />
+        <MyListScreen />
       </Route>
       <Route exact
         path="/films/:id"
         render = {(props) => (
           <MoviePageScreen
-            props = {props}
-            movies = {movies}
-          />
+            props = {props} />
         )} >
       </Route>
       <Route exact
@@ -53,7 +48,6 @@ const App = ({promo, movies}) => (
           <PlayerScreen
             props = {props}
             promo = {promo}
-            movies = {movies}
           />
         )} >
       </Route>

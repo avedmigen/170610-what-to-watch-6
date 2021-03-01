@@ -5,7 +5,6 @@ import PropTypes from "prop-types";
 import {movieShape, withRouterHistoryShape} from "../../types";
 import {findObjInArrayById, getIdFromRouteProps} from "../../utils";
 
-
 const PlayerScreen = ({props, promo, movies}) => {
 
   const id = getIdFromRouteProps(props);
@@ -61,5 +60,5 @@ const mapStateToProps = (state) => ({
 });
 
 export {PlayerScreen};
-export default connect(mapStateToProps)(PlayerScreen);
+export default connect(mapStateToProps, null)(PlayerScreen);
 
