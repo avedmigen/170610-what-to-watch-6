@@ -1,10 +1,7 @@
 import React from "react";
-import {connect} from "react-redux";
 import PropTypes from "prop-types";
 
-const Genre = ({title, genre, onSelectGenre}) => {
-
-  const isActive = title === genre;
+const Genre = ({title, onSelectGenre, isActive}) => {
 
   return (
     <li className=
@@ -26,13 +23,8 @@ const Genre = ({title, genre, onSelectGenre}) => {
 
 Genre.propTypes = {
   title: PropTypes.string.isRequired,
-  genre: PropTypes.string.isRequired,
   onSelectGenre: PropTypes.func.isRequired,
+  isActive: PropTypes.bool.isRequired
 };
 
-const mapStateToProps = (state) => ({
-  genre: state.genre,
-});
-
-export {Genre};
-export default connect(mapStateToProps, null)(Genre);
+export default Genre;

@@ -7,7 +7,7 @@ const AddReviewButton = ({id}) => (
 );
 
 AddReviewButton.propTypes = {
-  id: PropTypes.number,
+  id: PropTypes.string,
 };
 
 export default AddReviewButton;

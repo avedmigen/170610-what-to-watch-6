@@ -3,7 +3,7 @@ import PropTypes from "prop-types";
 import {connect} from "react-redux";
 
 import {movieShape} from "../../types";
-import {getSortedMoviesByGenre} from "../../utils";
+import {getFilteredMoviesByGenre} from "../../utils";
 
 import PlayButton from "../play-button/play-button";
 import MyListButton from "../my-list-button/my-list-button";
@@ -99,7 +99,7 @@ MainScreen.propTypes = {
 
 
 const mapStateToProps = (state) => ({
-  movies: getSortedMoviesByGenre(state.movies, state.genre),
+  movies: getFilteredMoviesByGenre(state.movies, state.genre),
 });
 
 export {MainScreen};

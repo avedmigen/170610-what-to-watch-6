@@ -13,12 +13,11 @@ import PlayerScreen from "../player-screen/player-screen";
 import NotFoundScreen from "../not-found-screen/not-found-screen";
 
 
-const App = ({promo, movies}) => (
+const App = ({promo}) => (
   <BrowserRouter>
     <Switch>
       <Route exact path="/">
-        <MainScreen
-          promo = {promo}/>
+        <MainScreen promo = {promo}/>
       </Route>
       <Route exact path="/login">
         <SignInScreen />
@@ -26,30 +25,14 @@ const App = ({promo, movies}) => (
       <Route exact path="/mylist">
         <MyListScreen />
       </Route>
-      <Route exact
-        path="/films/:id"
-        render = {(props) => (
-          <MoviePageScreen
-            props = {props} />
-        )} >
+      <Route exact path="/films/:id">
+        <MoviePageScreen />
       </Route>
-      <Route exact
-        path="/films/:id/review"
-        render = {(props) => (
-          <AddReviewScreen
-            props = {props}
-            movies = {movies}
-          />
-        )} >
+      <Route exact path="/films/:id/review">
+        <AddReviewScreen />
       </Route>
-      <Route exact
-        path="/player/:id"
-        render = {(props) => (
-          <PlayerScreen
-            props = {props}
-            promo = {promo}
-          />
-        )} >
+      <Route exact path="/player/:id">
+        <PlayerScreen promo = {promo} />
       </Route>
       <Route>
         <NotFoundScreen />

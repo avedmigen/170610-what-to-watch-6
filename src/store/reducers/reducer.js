@@ -10,19 +10,7 @@ const initialState = {
 const reducer = (state = initialState, action) => {
   switch (action.type) {
     case ActionType.GET_MOVIES:
-      if (state.genre === ALL_GENRES) {
-        return {
-          ...state,
-          movies: initialState.movies,
-        };
-      }
-
-      const sortedMovies = initialState.movies.filter((movie) => movie.genre === state.genre);
-
-      return {
-        ...state,
-        movies: sortedMovies,
-      };
+      return movies;
 
     case ActionType.SELECT_GENRE:
       return {

@@ -4,10 +4,6 @@ export const findObjInArrayById = (array, id) => {
   return array.find((item) => item.id === id);
 };
 
-export const getIdFromRouteProps = (props) => {
-  return Number(props.match.params.id);
-};
-
 export const convertDashedToCamelCase = (item) => {
   return item.replace(/(-.)/g, (x) => x[1].toUpperCase());
 };
@@ -24,7 +20,7 @@ export const getUniqueGenres = (movies) => {
   return uniqueGenres;
 };
 
-export const getSortedMoviesByGenre = (movies, genre) => {
+export const getFilteredMoviesByGenre = (movies, genre) => {
   if (genre === ALL_GENRES) {
     return movies;
   }
