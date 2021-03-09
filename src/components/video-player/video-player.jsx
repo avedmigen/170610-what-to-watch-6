@@ -20,7 +20,7 @@ const VideoPlayer = ({previewImage, videoLink, startPlayer, setStartPlayer}) => 
       setStartPlayer(false);
       timer = clearTimeout(timer);
     };
-  }, [startPlayer]);
+  }, [startPlayer, videoRef]);
 
   return (
     <video src={videoLink} ref={videoRef} width={280} height={175} poster={previewImage} muted/>
