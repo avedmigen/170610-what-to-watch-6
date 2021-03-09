@@ -1,16 +1,18 @@
 import React from "react";
-import {findObjInArrayById, getIdFromRouteProps} from "../../utils";
+import {connect} from "react-redux";
 import PropTypes from "prop-types";
 
 import {movieShape, withRouterHistoryShape} from "../../types";
+import {findObjInArrayById} from "../../utils";
+import {useParams} from "react-router-dom";
 
-const PlayerScreen = ({props, promo, movies}) => {
+const PlayerScreen = ({promo, movies}) => {
 
-  const id = getIdFromRouteProps(props);
-  const movie = findObjInArrayById(movies, id);
+  const {id} = useParams();
+  const movie = findObjInArrayById(movies, Number(id));
 
-  const getMovieName = () => id === promo.id ? promo.name : movie.name;
-  const getVideoLink = () => id === promo.id ? promo.videoLink : movie.videoLink;
+  const getMovieName = () => Number(id) === promo.id ? promo.name : movie.name;
+  const getVideoLink = () => Number(id) === promo.id ? promo.videoLink : movie.videoLink;
 
   return (
     <div className="player">
@@ -54,4 +56,10 @@ PlayerScreen.propTypes = {
   promo: movieShape,
 };
 
-export default PlayerScreen;
+const mapStateToProps = (state) => ({
+  movies: state.movies,
+});
+
+export {PlayerScreen};
+export default connect(mapStateToProps, null)(PlayerScreen);
+

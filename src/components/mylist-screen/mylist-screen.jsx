@@ -1,5 +1,6 @@
 import React from "react";
 import PropTypes from "prop-types";
+import {connect} from "react-redux";
 
 import {movieShape} from "../../types";
 
@@ -44,4 +45,9 @@ MyListScreen.propTypes = {
   movies: PropTypes.arrayOf(movieShape)
 };
 
-export default MyListScreen;
+const mapStateToProps = (state) => ({
+  movies: state.movies,
+});
+
+export {MyListScreen};
+export default connect(mapStateToProps, null)(MyListScreen);

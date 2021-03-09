@@ -1,14 +1,13 @@
 import React, {useState} from "react";
-import {Link} from "react-router-dom";
+import {Link, useParams} from "react-router-dom";
+import {connect} from "react-redux";
 import PropTypes from "prop-types";
 
 import {movieShape, withRouterHistoryShape} from "../../types";
-
 import LogoHeader from "../logo-header/logo-header";
-import {findObjInArrayById, getIdFromRouteProps, convertDashedToCamelCase} from "../../utils";
+import {findObjInArrayById, convertDashedToCamelCase} from "../../utils";
 
-
-const AddReviewScreen = ({props, movies}) => {
+const AddReviewScreen = ({movies}) => {
 
   const [reviewForm, setReviewForm] = useState({
     rating: 0,
@@ -24,8 +23,8 @@ const AddReviewScreen = ({props, movies}) => {
     setReviewForm({...reviewForm, [convertDashedToCamelCase(name)]: value});
   };
 
-  const id = getIdFromRouteProps(props);
-  const movie = findObjInArrayById(movies, id);
+  const {id} = useParams();
+  const movie = findObjInArrayById(movies, Number(id));
 
   const {name, posterImage, backgroundImage} = movie;
 
@@ -121,4 +120,10 @@ AddReviewScreen.propTypes = {
   props: PropTypes.objectOf(withRouterHistoryShape),
 };
 
-export default AddReviewScreen;
+const mapStateToProps = (state) => ({
+  movies: state.movies,
+});
+
+export {AddReviewScreen};
+export default connect(mapStateToProps, null)(AddReviewScreen);
+

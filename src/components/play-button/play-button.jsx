@@ -14,7 +14,10 @@ const PlayButton = ({id}) => (
 );
 
 PlayButton.propTypes = {
-  id: PropTypes.number,
+  id: PropTypes.oneOfType([
+    PropTypes.string,
+    PropTypes.number,
+  ])
 };
 
 export default PlayButton;

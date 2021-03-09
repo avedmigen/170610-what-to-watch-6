@@ -17,14 +17,17 @@ const SmallMovieCard = ({movie}) => {
       onMouseLeave={ togglePlayerStarted }>
 
       <div className="small-movie-card__image">
-        {isPlayerStarted ?
-          <VideoPlayer
-            previewImage= {previewImage}
-            videoLink = {videoLink}
-            startPlayer = {isPlayerStarted}
-            setStartPlayer = {setPlayerStarted}
-          /> :
-          <img src={previewImage} alt={name} width="280" height="175"/> }
+        {isPlayerStarted
+          ? (
+            <VideoPlayer
+              previewImage= {previewImage}
+              videoLink = {videoLink}
+              startPlayer = {isPlayerStarted}
+              setStartPlayer = {setPlayerStarted}
+            />
+          )
+          : <img src={previewImage} alt={name} width="280" height="175"/>
+        }
       </div>
       <h3 className="small-movie-card__title">
         <Link className="small-movie-card__link" to={`/films/${id}`}>{name}</Link>

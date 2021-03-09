@@ -1,4 +1,6 @@
 import React from "react";
+import {useParams} from "react-router-dom";
+import {connect} from "react-redux";
 import PropTypes from "prop-types";
 
 import {movieShape} from "../../types";
@@ -8,13 +10,13 @@ import LogoFooter from "../logo-footer/logo-footer";
 import PlayButton from "../play-button/play-button";
 import MyListButton from "../my-list-button/my-list-button";
 import AddReviewButton from "../add-review-button/add-review-button";
-import {findObjInArrayById, getIdFromRouteProps} from "../../utils";
+import {findObjInArrayById} from "../../utils";
 import MoviesList from "../movies-list/movies-list";
 
-const MoviePageScreen = ({props, movies}) => {
+const MoviePageScreen = ({movies}) => {
 
-  const id = getIdFromRouteProps(props);
-  const movie = findObjInArrayById(movies, id);
+  const {id} = useParams();
+  const movie = findObjInArrayById(movies, Number(id));
 
   const {name, posterImage, backgroundImage, description, rating, scoresCount, director, starring, genre, released} = movie;
 
@@ -122,4 +124,9 @@ MoviePageScreen.propTypes = {
   props: PropTypes.object
 };
 
-export default MoviePageScreen;
+const mapStateToProps = (state) => ({
+  movies: state.movies,
+});
+
+export {MoviePageScreen};
+export default connect(mapStateToProps, null)(MoviePageScreen);
